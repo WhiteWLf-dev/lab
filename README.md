@@ -36,8 +36,8 @@ To compile the program, follow these steps:
 1. Clone the Repository (if applicable):
 
    ```bash
-   git clone https://git.miem.hse.ru/anushakov/lab2.git
-   cd lab2
+   git clone https://github.com/WhiteWLf-dev/lab.git
+   cd lab
    ```
 
 2. Run CMake: this command generates the necessary build files based on the CMakeLists.txt configuration:
