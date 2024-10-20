@@ -1,0 +1,111 @@
+This command-\/line utility allows you to encrypt and decrypt files using the Triple DES (3DES) algorithm in CBC mode. The cryptographic key and initialization vector (IV) are derived from a user-\/provided password using Open\+SSL\textquotesingle{}s key derivation functions.\hypertarget{md_README_autotoc_md1}{}\doxysection{Features}\label{md_README_autotoc_md1}
+
+\begin{DoxyItemize}
+\item {\bfseries{Encryption}}\+: Encrypt files using the 3DES (Triple DES) algorithm in CBC mode.
+\item {\bfseries{Decryption}}\+: Decrypt previously encrypted files.
+\item {\bfseries{Password-\/\+Based Key Derivation}}\+: The key and IV are derived securely from the user’s password using SHA-\/256.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md2}{}\doxysection{Prerequisites}\label{md_README_autotoc_md2}
+
+\begin{DoxyItemize}
+\item Open\+SSL development libraries ({\ttfamily libssl-\/dev})
+\item CMake
+\item A C compiler (e.\+g., {\ttfamily gcc})
+\end{DoxyItemize}
+
+Make sure Open\+SSL is installed on your system. If not, you can install it using a package manager. For example\+:\hypertarget{md_README_autotoc_md3}{}\doxysubsection{On Ubuntu/\+Debian\+:}\label{md_README_autotoc_md3}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo apt-\/get install gcc libssl-\/dev cmake}
+
+\end{DoxyCode}
+ \hypertarget{md_README_autotoc_md4}{}\doxysubsection{On Fedora\+:}\label{md_README_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{sudo dnf install gcc openssl-\/devel cmake}
+
+\end{DoxyCode}
+ \hypertarget{md_README_autotoc_md5}{}\doxysubsection{On mac\+OS (with Homebrew)\+:}\label{md_README_autotoc_md5}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{brew install gcc openssl cmake}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md6}{}\doxysection{Building the Utility}\label{md_README_autotoc_md6}
+To compile the program, follow these steps\+:
+
+
+\begin{DoxyEnumerate}
+\item Clone the Repository (if applicable)\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://git.miem.hse.ru/anushakov/lab2.git}
+\DoxyCodeLine{cd lab2}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Run CMake\+: this command generates the necessary build files based on the CMake\+Lists.\+txt configuration\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cmake -\/S . -\/B build}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyEnumerate}
+\item Build program\+:
+\end{DoxyEnumerate}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd build}
+\DoxyCodeLine{make}
+
+\end{DoxyCode}
+ \hypertarget{md_README_autotoc_md7}{}\doxysection{Usage}\label{md_README_autotoc_md7}
+The utility takes several command-\/line arguments to specify whether you want to encrypt or decrypt a file, along with input, output, and password parameters.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./des [-\/e|-\/d] -\/i input -\/o output -\/p password}
+
+\end{DoxyCode}
+
+
+Options\+:
+
+
+\begin{DoxyItemize}
+\item -\/e \+: Encrypt the input file
+\item -\/d \+: Decrypt the input file
+\item -\/i \+: Path to the input file
+\item -\/o \+: Path to the output file
+\item -\/p \+: Password to use for encryption or decryption
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md8}{}\doxysection{Example Usage}\label{md_README_autotoc_md8}
+\hypertarget{md_README_autotoc_md9}{}\doxysubsection{Encrypt a File}\label{md_README_autotoc_md9}
+To encrypt a file named plaintext.\+txt and output it as encrypted.\+dat\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./des -\/e -\/i plaintext.txt -\/o encrypted.dat -\/p your\_password}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md10}{}\doxysubsection{Decrypt a File}\label{md_README_autotoc_md10}
+To decrypt the encrypted.\+dat file back to decrypted.\+txt\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./des -\/d -\/i encrypted.dat -\/o decrypted.txt -\/p your\_password}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md11}{}\doxysection{Contributing}\label{md_README_autotoc_md11}
+Contributions are welcome! Please feel free to submit issues and pull requests.\hypertarget{md_README_autotoc_md12}{}\doxysection{Licensing and distribution}\label{md_README_autotoc_md12}
+Utility is distributed under the \href{http://www.apache.org/licenses/LICENSE-2.0}{\texttt{ Apache License, Version 2.\+0}}.\hypertarget{md_README_autotoc_md13}{}\doxysection{Acknowledgements}\label{md_README_autotoc_md13}
+This utility uses the Open\+SSL library for cryptographic operations. 
